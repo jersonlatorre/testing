@@ -17,8 +17,6 @@ class UI {
     })
 
     this.container = reblessed.box({
-      // top: 'center',
-      // left: 'center',
       width: 2 * width,
       height: height,
     })
@@ -35,13 +33,11 @@ class UI {
     this.topHud = reblessed.text({
       width: 2 * width,
       top: 0,
-      // left: 'center',
     })
 
     this.bottomHud = reblessed.text({
       width: 2 * width,
       top: height + 1,
-      // left: 'center',
     })
 
     this.container.append(this.box)
@@ -79,11 +75,20 @@ class UI {
 
   printTopMessage(message) {
     this.topHud.setContent(message)
+    this.screen.render()
   }
 
   printBottomMessage(message) {
     this.bottomHud.setContent(message)
+    this.screen.render()
   }
 }
+
+// const ui = new UI(5, 5)
+
+// ui.printCharacter(0, 0, 'X')
+// ui.printCharacter(2, 2, 'X')
+// ui.printTopMessage('Hello')
+// ui.printBottomMessage('Bye')
 
 export { UI }
